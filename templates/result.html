@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haplagz result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('https://s3.amazonaws.com/i.snag.gy/XydUzA.jpg')] bg-cover mt-16">
+    <div class="bg-[#69181a] flex items-center justify-center lg:h-[70px] h-[80px] rounded-t-2xl">
+        <h2 class=" text-white text-2xl text-center">Results</h2>
+    </div>
+    <div class="bg-[#8F4B4B] lg:h-[430px] h-[860px] rounded-b-2xl flex lg:flex-row flex-col">
+        <div class="lg:w-1/2 w-full flex flex-col">
+            <div class="bg-[#69181a] lg:h-[70px] h-[50px] mt-2 flex items-center justify-center">
+                <h2 class="text-white text-xl text-center">Websites searched</h2>
+            </div>
+            <div class="h-[360px] flex pl-2 pt-2 border-r-4 border-r-[#69181a]">
+                <ul id="webList" class="w-full overflow-hidden overflow-y-scroll">
+                </ul>
+            </div>
+        </div>
+        <div class="lg:w-1/2 w-full flex flex-col">
+            <div class="bg-[#69181a] lg:h-[70px] h-[50px] mt-2 flex items-center justify-center">
+                <h2 class="text-white text-xl text-center">Summary</h2>
+            </div>
+            <div class="h-1/2 flex flex-col">
+                <div class="h-1/4 flex items-center justify-center">
+                    <h2 id="plagStat" class=""></h2>
+                </div>
+                <div class="lg:bg-none bg-[#8F4B4B] h-3/4 flex flex-col my-20 rounded-b-2xl">
+                    <p id="hideme" class="pl-2 h-1/5">Websites where plagiarism was detected:</p>
+                    <ul id="plagList" class=" h-4/5 w-full my-2 overflow-hidden overflow-y-scroll"></ul>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    var arr = JSON.parse('{{ row|safe }}');
+    var plagSite = JSON.parse('{{ plagSite|safe }}');
+    var stat = JSON.parse('{{ stat|safe }}');
+
+    var listID = document.getElementById('webList');
+    var headerStat = document.getElementById('plagStat');
+    var plagID = document.getElementById('plagList');
+    var hideText = document.getElementById('hideme');
+
+    if (stat === false){
+        headerStat.className ="flex justify-center text-center mt-20 text-[#DC143C] bg-[#69181a] py-2 px-10 rounded-xl font-bold text-2xl"
+        headerStat.textContent = "Haplagz couldn't find any plagiarism";
+        hideText.hidden = true;
+        plagID.hidden = true;
+    }
+    else{
+        headerStat.className ="text-center mt-20 text-green-300 bg-[#69181a] py-3 px-10 rounded-xl font-bold text-2xl"
+        headerStat.textContent = "Haplagz detected plagiarism";
+    }
+
+    arr.forEach(function(text){
+        var listItem = document.createElement('li');
+        listItem.textContent = text;
+        listItem.className = "mb-2 lg:text-xl text-md font-bold text-[#69181a] px-2 hover:bg-[#69181a] duration-100 hover:text-[#8F4B4B] duration-100"
+        listID.appendChild(listItem); 
+    });
+
+    plagSite.forEach(function(text){
+        var plagItem = document.createElement('li');
+        plagItem.textContent = text;
+        plagItem.className = "mb-2 lg:text-xl text-md font-bold text-[#69181a] px-2 hover:bg-[#69181a] duration-100 hover:text-[#8F4B4B] duration-100"
+        plagID.appendChild(plagItem); 
+    });
+
+    var resultDiv = document.getElementById("sectionRes");
+        resultDiv.scrollIntoView({ behavior: "smooth" });
+
+</script>   
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Haplagz</title>
+</head>
+
+<body class=" font-mono bg-[url('https://s3.amazonaws.com/i.snag.gy/XydUzA.jpg')] bg-cover ">
+    <div class="text-center font-mono">
+        <h1 class="text-[#BB8484] text-center mt-32 text-6xl font-bold mb-2">Haplagz</h1>
+        <p class="mb-14 text-[#AC6161]">Detect plagiarism in one go</p>
+    </div>
+    <form id="hapForm" method="POST" action="/results">
+        <div class=" flex lg:flex-row flex-col gap-2 h-1/2 mx-4">
+                <div class="flex flex-col bg-[#69181a] h-[300px] lg:w-1/2 w-full rounded-2xl ">
+                    <div class="h-1/5 flex items-center">
+                        <h2 class="text-white pl-12 text-2xl">Step 1 of 2</h2>
+                    </div>
+                    <div class="bg-[#8F4B4B] h-4/5 flex items-center justify-center flex-col gap-8 rounded-b-2xl">
+                        <input name="quest" class="hover:bg-[#69181a] duration-700 bg-[#3D0001] placeholder-[#AC6161] text-[#AC6161] rounded-3xl h-1/4 resize-none w-5/6 text-center " placeholder="Enter question"></input>
+                        <input name="ans" class="hover:bg-[#69181a] duration-700 bg-[#3D0001] placeholder-[#AC6161] text-[#AC6161] rounded-3xl h-1/4 resize-none w-5/6 text-center " placeholder="Enter the answer"></input>
+                    </div>
+                </div>
+                <div class="bg-[#69181a] h-[300px] lg:w-1/2 w-full rounded-2xl  ">
+
+                    <div class="h-1/5 flex items-center">
+                        <h2 class="text-white pl-12 text-2xl">Step 2 of 2</h2>
+                    </div>
+
+                    <div class="h-4/5 flex flex-col gap-0.5">
+                        <div class=" h-2/3 flex flex-row gap-0.5">
+                            <div class="w-1/2 bg-[#8F4B4B]">
+                                <div class="h-1/3 ">
+                                    <h1 class="lg:font-extrabold lg:text-lg text-[12px] font-extrabold p-4 text-[#3D0001]">Choose a search engine:</h1>
+                                </div>
+                                <div class="h-2/3 p-4 ">
+                                    <div class="flex lg:flex-row flex-col">
+                                        <div class="flex flex-row">
+                                            <input type="radio" id="opt1" value="google" name="engop">
+                                            <label for="opt1" class=" font-bold cursor-pointer select-none p-2 rounded-md text-[#3D0001]">Google</label>
+                                        </div>
+                                        <div class="flex flex-row">
+                                            <input type="radio" id="opt2" value="bing" name="engop">
+                                            <label for="opt2" class="font-bold cursor-pointer select-none p-2 rounded-md text-[#3D0001]">Bing</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#8F4B4B] w-1/2">
+                                <div class="h-1/3 ">
+                                    <h1 class="lg:font-extrabold lg:text-lg text-[12px] font-extrabold p-4 text-[#3D0001]">Select the options:</h1>
+                                </div>
+                                <div class="h-2/3 p-4 flex flex-col items-start gap-2">
+                                    <input name="nolink" class="lg:text-xs text-[10px] rounded-2xl p-1 px-3 bg-[#3D0001] placeholder-[#AC6161] text-[#AC6161] lg:w-3/4 w-11/12" placeholder="No. of links to search" type="number" min="1" max="30">
+                                    <div class="flex flex-row items-center">
+                                        <input type="checkbox" name="advance">
+                                        <p class="lg:font-bold lg:text-sm text-[10px] font-bold px-2 text-[#3D0001]">Apply advanced search*</p>
+                                    </div>
+                                    <p class="lg:font-medium lg:text-xs lg:pt-3 text-[10px] text-[#3D0001]">*Splits and search.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" bg-[#8F4B4B] h-1/3 flex justify-center items-center rounded-b-2xl">
+                            <button type="submit" class="hover: hover:bg-[#69181a] duration-700 bg-[#3D0001] text-white w-11/12 h-2/3 rounded-b-2xl">Begin search</button>
+                        </div>
+                    </div>
+
+                </div>
+    
+        </div>
+    </form>
+    </div>
+</body>
+
+</html>
+
