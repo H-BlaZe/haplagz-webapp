@@ -7,7 +7,7 @@ This repository contains a web application named "Haplagz" for detecting plagiar
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your_username/haplagz-webapp.git
+   git clone https://github.com/H-BlaZe/haplagz-webapp.git
    ```
 
 2. **Navigate to the Project Directory:**
