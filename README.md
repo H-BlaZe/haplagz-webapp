@@ -50,7 +50,7 @@ This repository contains a web application named "Haplagz" for detecting plagiar
 
 - **`haplagz-webapp.py`**: This is the main Python file containing the Flask web application.
 - **`templates/`**: This directory contains HTML templates for rendering the web pages.
-- **`static/`**: This directory contains static files such as CSS and JavaScript.
+- **`src/`**: This directory contains static files such as CSS and JavaScript.
 
 ## Application Workflow
 
